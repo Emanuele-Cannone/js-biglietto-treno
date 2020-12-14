@@ -53,7 +53,7 @@ if (eta < 18) {
   messaggio = '(sconto minorenne applicato)';
 
 } 
-//con cliente over65
+//con cliente over65 
 else if (eta >= 65) {
   prezzo -= ((costoBiglietto * 40) / 100);
   prezzo = prezzo.toFixed(2);

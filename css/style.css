@@ -1,1 +1,32 @@
-https://www.trenitalia.com/content/dam/tcom/immagini/trenitalia-img/informazioni-e-assistenza/545x470/545x470_in_viaggio_verso_la_sostenibilit%C3%A0.jpg
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenitore{
+  width: 70%;
+  margin: auto;
+}
+
+header{
+  height: 60px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+}
+
+main{
+  background-image: url(https://www.trenitalia.com/content/dam/tcom/immagini/trenitalia-img/informazioni-e-assistenza/545x470/545x470_in_viaggio_verso_la_sostenibilit%C3%A0.jpg);
+  background-size: cover;
+  height: 700px;
+}
+
+main p{
+padding-top: 50px;
+font-size: 30px;
+text-transform: capitalize;
+}
