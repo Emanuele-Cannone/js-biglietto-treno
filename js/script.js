@@ -41,14 +41,25 @@ var costoBiglietto = km * costoKm;
 
 //dichiara 2 casistiche in modo che la terza sia vista solo nel caso in cui nessuna di tutte e due sia vera
 
+
+//questa è la variabile che viene visualizzata prima di tutto e che rimane valida nel caso in cui non rientri nelle casistiche di sotto
+prezzo = costoBiglietto;
+messaggio = '(nessuno sconto applicato)';
+
+//con cliente minorenne
 if (eta < 18) {
-  prezzo = (costoBiglietto * 20) / 100;
-  document.getElementById('prezzo').innerHTML += prezzo + '€' + ' ' + '(sconto minorenne applicato)';
-} else if (eta >= 65) {
-  prezzo = (costoBiglietto * 40) / 100;
-  document.getElementById('prezzo').innerHTML += prezzo + '€' + ' ' + '(sconto over65 applicato)';
+  prezzo -= ((costoBiglietto * 20) / 100) ;
+  prezzo = prezzo.toFixed(2);
+  messaggio = '(sconto minorenne applicato)';
+
+} 
+//con cliente over65
+else if (eta >= 65) {
+  prezzo -= ((costoBiglietto * 40) / 100);
+  prezzo = prezzo.toFixed(2);
+  messaggio = '(sconto over65 applicato)';
 }
 
-//questa stampa uscirà fuori sempre in questo modo perchè è al di fuori dell'operazione
+//stampa
 
-document.getElementById('prezzo').innerHTML = costoBiglietto + '€' + ' ' + '(nessuno sconto applicato)';
+document.getElementById('prezzo').innerHTML += prezzo + '€' + ' ' + messaggio;
