@@ -10,31 +10,45 @@
 var eta = parseInt(prompt('Inserisci la tua Età'));
 var km = parseInt(prompt('Inserisci i Km'));
 
-//console.log(eta, km);
-
-
 //dichiariamo il costo per km
 var costoKm = 0.21;
 
-
 //calcoliamo il costo del biglietto
 var costoBiglietto = km * costoKm;
-//console.log(costoBiglietto);
+
+
+//Esempio 1
+
+//dichiara tutte e tre le casistiche
+
+//if (eta < 18) {
+//  sconto = ((costoBiglietto * 20) / 100);
+//  document.getElementById('prezzo').innerHTML += costoBiglietto - sconto + ' ' + '(sconto minorenne applicato)'
+//} 
+//  else if (eta >= 65) { 
+//  sconto = ((costoBiglietto * 40) / 100);
+//  document.getElementById('prezzo').innerHTML += costoBiglietto - sconto + ' ' + 'sconto over65 applicato'
+//  }
+//  else {
+//    document.getElementById('prezzo').innerHTML += costoBiglietto + ' ' + ' nessuno sconto applicato '
+//  }
 
 
 
+
+
+//Esempio 2
+
+//dichiara 2 casistiche in modo che la terza sia vista solo nel caso in cui nessuna di tutte e due sia vera
 
 if (eta < 18) {
-  sconto = ((costoBiglietto * 20) / 100);
-  //console.log(costoBiglietto - sconto);
-  document.getElementById('prezzo').innerHTML += costoBiglietto - sconto + ' ' + '(sconto minorenne applicato)'
-} 
-  else if (eta >= 65) { 
-  sconto = ((costoBiglietto * 40) / 100);
-  //console.log(costoBiglietto - sconto);
-  document.getElementById('prezzo').innerHTML += costoBiglietto - sconto + ' ' + 'sconto ovre65 applicato'
-  }
-  else {
-    document.getElementById('prezzo').innerHTML += costoBiglietto + ' ' + ' nessuno sconto applicato '
-  }
+  prezzo = (costoBiglietto * 20) / 100;
+  document.getElementById('prezzo').innerHTML += prezzo + '€' + ' ' + '(sconto minorenne applicato)';
+} else if (eta >= 65) {
+  prezzo = (costoBiglietto * 40) / 100;
+  document.getElementById('prezzo').innerHTML += prezzo + '€' + ' ' + '(sconto over65 applicato)';
+}
 
+//questa stampa uscirà fuori sempre in questo modo perchè è al di fuori dell'operazione
+
+document.getElementById('prezzo').innerHTML = costoBiglietto + '€' + ' ' + '(nessuno sconto applicato)';
